@@ -1,0 +1,48 @@
+
+installation reference :
+
+http://www.schenkels.nl/2014/08/how-to-install-and-configure-pentaho-bi-suite-5-1-ce-ubuntu-14-04-postgresql-9-3/
+
+https://wiki.civicrm.org/confluence/display/CRMDOC/Installation+of+Pentaho+components+and+setting+up+connections
+
+-------------------------------------------------------------------------------------------------------------------
+
+github (postgresql database)
+
+git clone -b <branch> https://github.com/akhilrajmailbox/pentaho-6.1-local.git
+
+
+four branches
+
+1) master > local database configuration
+2) master-remote-db > remote database configuration
+3) files > reference files
+4) pentaho > configuration files for dockerfile
+
+-------------------------------------------------------------------------------------------------------------------
+
+dockerfile have entrypoint so no need of aiuto start up seperately
+server configuration need auto start up of the pentaho service
+
+
+1) cron job
+
+Use a crontab option to make your script run after reboot,
+you can do it by adding @reboot code in cron
+@reboot yourScriptPath 
+
+http://askubuntu.com/questions/290099/how-to-run-a-script-during-boot-as-root
+
+http://www.cyberciti.biz/faq/howto-linux-unix-start-restart-cron/
+
+http://askubuntu.com/questions/814/how-to-run-scripts-on-start-up
+
+
+
+2) put service in /etc/init.d
+
+https://www.digitalocean.com/community/tutorials/how-to-configure-a-linux-service-to-start-automatically-after-a-crash-or-reboot-part-1-practical-examples
+
+https://embraceubuntu.com/2005/09/07/adding-a-startup-script-to-be-run-at-bootup/
+
+-------------------------------------------------------------------------------------------------------------------
