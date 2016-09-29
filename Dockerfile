@@ -7,11 +7,11 @@ run apt-get update && apt-get -y upgrade \
 	&& apt-get -y update \
 	&& apt-get install -y nano wget unzip locate oracle-java8-installer libmysql-java postgresql git \
 	&& update-java-alternatives --set java-8-oracle \
-	&& apt-get install oracle-java8-set-default && java -version \
+	&& apt-get install oracle-java8-set-default && java -version
 workdir /opt/pentaho
 
-#run wget http://sourceforge.net/projects/pentaho/files/Business%20Intelligence%20Server/6.1/biserver-ce-6.1.0.1-196.zip
-add biserver-ce-6.1.0.1-196.zip /opt/pentaho/
+run wget http://sourceforge.net/projects/pentaho/files/Business%20Intelligence%20Server/6.1/biserver-ce-6.1.0.1-196.zip
+#add biserver-ce-6.1.0.1-196.zip /opt/pentaho/
 run unzip biserver-ce-6.1.0.1-196.zip
 
 
